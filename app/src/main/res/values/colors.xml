@@ -5,4 +5,8 @@
     <color name="purple_dark">#4527A0</color>
     <color name="purple_light">#B388FF</color>
 
+    <!-- Warna latar -->
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_screen">#F7F5FA</color>
+
 </resources>
