@@ -497,3 +497,26 @@ private fun ExperienceOption(
         )
     }
 }
+
+@Composable
+private fun SkillCheckbox(
+    label: String,
+    checked: Boolean,
+    onCheckedChange: (Boolean) -> Unit
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = checked,
+            onCheckedChange = onCheckedChange
+        )
+
+        Text(
+            text = label,
+            modifier = Modifier.clickable {
+                onCheckedChange(!checked)
+            }
+        )
+    }
+}
