@@ -405,4 +405,52 @@ private fun FormBiodataCard(
             }
         }
     }
+
+    // Dialog berhasil
+    if (showSuccess) {
+        AlertDialog(
+            onDismissRequest = {
+                showSuccess = false
+            },
+            title = {
+                Text(stringResource(R.string.success_title))
+            },
+            text = {
+                Text(stringResource(R.string.success_message))
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showSuccess = false
+                    }
+                ) {
+                    Text(stringResource(R.string.confirm))
+                }
+            }
+        )
+    }
+
+    // Dialog validasi
+    if (showError) {
+        AlertDialog(
+            onDismissRequest = {
+                showError = false
+            },
+            title = {
+                Text(stringResource(R.string.form_error))
+            },
+            text = {
+                Text(stringResource(R.string.required_field))
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showError = false
+                    }
+                ) {
+                    Text(stringResource(R.string.confirm))
+                }
+            }
+        )
+    }
 }
