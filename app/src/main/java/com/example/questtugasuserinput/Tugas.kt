@@ -122,4 +122,64 @@ private fun FormBiodataCard(
         advanced
     )
 
+    Card(
+        modifier = modifier.padding(
+            horizontal = dimensionResource(
+                R.dimen.screen_padding
+            )
+        ),
+        shape = RoundedCornerShape(
+            dimensionResource(R.dimen.form_corner_radius)
+        ),
+        colors = CardDefaults.cardColors(
+            containerColor = colorResource(R.color.background_white)
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = dimensionResource(
+                R.dimen.card_elevation
+            )
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+                .padding(
+                    dimensionResource(R.dimen.form_padding)
+                ),
+            verticalArrangement = Arrangement.spacedBy(
+                dimensionResource(R.dimen.field_spacing)
+            )
+        ) {
+            Text(
+                text = stringResource(R.string.form_title),
+                fontSize = dimensionResource(
+                    R.dimen.title_size
+                ).value.sp,
+                fontWeight = FontWeight.Bold,
+                color = colorResource(R.color.purple_primary),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Text(
+                text = stringResource(R.string.form_subtitle),
+                fontSize = dimensionResource(
+                    R.dimen.subtitle_size
+                ).value.sp,
+                color = colorResource(R.color.text_secondary),
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(
+                modifier = Modifier.height(
+                    dimensionResource(R.dimen.small_spacing)
+                )
+            )
+
+
+            }
+        
+    }
 }
