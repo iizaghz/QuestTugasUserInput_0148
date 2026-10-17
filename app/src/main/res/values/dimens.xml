@@ -9,4 +9,8 @@
     <dimen name="screen_padding">0dp</dimen>
     <dimen name="form_padding">20dp</dimen>
 
+    <!-- Jarak antarkomponen -->
+    <dimen name="field_spacing">12dp</dimen>
+    <dimen name="small_spacing">8dp</dimen>
+
 </resources>
