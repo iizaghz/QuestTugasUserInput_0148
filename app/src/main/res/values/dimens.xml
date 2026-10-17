@@ -17,4 +17,8 @@
     <dimen name="form_corner_radius">28dp</dimen>
     <dimen name="card_elevation">6dp</dimen>
 
+    <!-- Bentuk input -->
+    <dimen name="field_corner_radius">14dp</dimen>
+
+
 </resources>
