@@ -5,4 +5,8 @@
     <dimen name="header_height">220dp</dimen>
     <dimen name="form_overlap">190dp</dimen>
 
+    <!-- Padding layar dan kartu -->
+    <dimen name="screen_padding">0dp</dimen>
+    <dimen name="form_padding">20dp</dimen>
+
 </resources>
