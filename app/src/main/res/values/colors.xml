@@ -16,4 +16,7 @@
     <!-- Warna input -->
     <color name="input_border">#D8D2E0</color>
 
+    <!-- Warna status -->
+    <color name="success_green">#2E7D32</color>
+    <color name="error_red">#D32F2F</color>
 </resources>
