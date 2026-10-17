@@ -30,4 +30,8 @@
     <string name="skill_uiux">UI/UX</string>
     <string name="skill_web">Web</string>
 
+    <!-- Tombol -->
+    <string name="proceed">Proceed</string>
+    <string name="confirm">OK</string>
+
 </resources>
