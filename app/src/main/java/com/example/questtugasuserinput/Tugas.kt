@@ -178,8 +178,164 @@ private fun FormBiodataCard(
                 )
             )
 
+            // ROW 1: Nama depan dan nama belakang
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(
+                    dimensionResource(R.dimen.field_spacing)
+                )
+            ) {
+                Box(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    FormInputField(
+                        label = stringResource(R.string.first_name),
+                        value = firstName,
+                        onValueChange = { firstName = it },
+                        isError = showError && firstName.isBlank()
+                    )
+                }
+
+                Box(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    FormInputField(
+                        label = stringResource(R.string.last_name),
+                        value = lastName,
+                        onValueChange = { lastName = it },
+                        isError = showError && lastName.isBlank()
+                    )
+                }
+            }
+
+            // ROW 2: Email selebar form
+            FormInputField(
+                label = stringResource(R.string.email),
+                value = email,
+                onValueChange = { email = it },
+                isError = showError &&
+                        !Patterns.EMAIL_ADDRESS.matcher(email).matches()
+            )
+
+            // ROW 3: Tanggal lahir dan pengalaman
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(
+                    dimensionResource(R.dimen.field_spacing)
+                ),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Tanggal lahir
+                Box(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    OutlinedTextField(
+                        value = birthDate,
+                        onValueChange = {},
+                        readOnly = true,
+                        label = {
+                            Text(
+                                stringResource(R.string.birth_date)
+                            )
+                        },
+                        placeholder = {
+                            Text(
+                                stringResource(R.string.date_format_hint)
+                            )
+                        },
+                        trailingIcon = {
+                            Text("▦")
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(
+                            dimensionResource(R.dimen.field_corner_radius)
+                        ),
+                        singleLine = true,
+                        isError = showError && birthDate.isBlank()
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .matchParentSize()
+                            .clickable {
+                                val calendar = Calendar.getInstance()
+
+                                DatePickerDialog(
+                                    context,
+                                    { _, year, month, day ->
+                                        birthDate = String.format(
+                                            Locale.getDefault(),
+                                            "%02d/%02d/%04d",
+                                            day,
+                                            month + 1,
+                                            year
+                                        )
+                                    },
+                                    calendar.get(Calendar.YEAR),
+                                    calendar.get(Calendar.MONTH),
+                                    calendar.get(Calendar.DAY_OF_MONTH)
+                                ).show()
+                            }
+                    )
+                }
+
+                // Pilihan pengalaman berupa dropdown
+                Box(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    OutlinedTextField(
+                        value = experience,
+                        onValueChange = {},
+                        readOnly = true,
+                        label = {
+                            Text(
+                                stringResource(R.string.experience_label)
+                            )
+                        },
+                        placeholder = {
+                            Text("Pilih pengalaman")
+                        },
+                        trailingIcon = {
+                            Text("▾")
+                        },
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(
+                            dimensionResource(R.dimen.field_corner_radius)
+                        ),
+                        singleLine = true,
+                        isError = showError && experience.isBlank()
+                    )
+
+                    Box(
+                        modifier = Modifier
+                            .matchParentSize()
+                            .clickable {
+                                experienceExpanded = true
+                            }
+                    )
+
+                    DropdownMenu(
+                        expanded = experienceExpanded,
+                        onDismissRequest = {
+                            experienceExpanded = false
+                        }
+                    ) {
+                        experienceOptions.forEach { option ->
+                            DropdownMenuItem(
+                                text = {
+                                    Text(option)
+                                },
+                                onClick = {
+                                    experience = option
+                                    experienceExpanded = false
+                                }
+                            )
+                        }
+                    }
+                }
+            }
 
             }
-        
+
     }
 }
