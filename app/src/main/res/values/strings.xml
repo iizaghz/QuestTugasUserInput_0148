@@ -34,4 +34,10 @@
     <string name="proceed">Proceed</string>
     <string name="confirm">OK</string>
 
+    <!-- Dialog -->
+    <string name="success_title">Berhasil</string>
+    <string name="success_message">Biodata berhasil divalidasi.</string>
+    <string name="form_error">Form Belum Lengkap</string>
+    <string name="required_field">Periksa kembali semua kolom dan pilih minimal satu skill.</string>
+
 </resources>
