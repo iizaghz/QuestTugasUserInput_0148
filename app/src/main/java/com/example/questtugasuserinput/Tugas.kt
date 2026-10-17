@@ -454,3 +454,25 @@ private fun FormBiodataCard(
         )
     }
 }
+
+@Composable
+private fun FormInputField(
+    label: String,
+    value: String,
+    onValueChange: (String) -> Unit,
+    isError: Boolean = false
+) {
+    OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        label = {
+            Text(text = label)
+        },
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(
+            dimensionResource(R.dimen.field_corner_radius)
+        ),
+        singleLine = true,
+        isError = isError
+    )
+}
