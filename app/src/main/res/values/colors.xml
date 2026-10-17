@@ -13,4 +13,7 @@
     <color name="text_primary">#25212B</color>
     <color name="text_secondary">#77717F</color>
 
+    <!-- Warna input -->
+    <color name="input_border">#D8D2E0</color>
+
 </resources>
