@@ -366,8 +366,43 @@ private fun FormBiodataCard(
                 )
             }
 
+            // ROW 5: Tombol Proceed selebar form
+            Button(
+                onClick = {
+                    val valid =
+                        firstName.isNotBlank() &&
+                                lastName.isNotBlank() &&
+                                Patterns.EMAIL_ADDRESS
+                                    .matcher(email)
+                                    .matches() &&
+                                birthDate.isNotBlank() &&
+                                experience.isNotBlank() &&
+                                (androidSkill || uiuxSkill || webSkill)
 
+                    showError = !valid
+                    showSuccess = valid
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(
+                        dimensionResource(R.dimen.button_height)
+                    ),
+                shape = RoundedCornerShape(
+                    dimensionResource(R.dimen.button_corner_radius)
+                ),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(
+                        R.color.purple_primary
+                    )
+                )
+            ) {
+                Text(
+                    text = stringResource(R.string.proceed),
+                    fontSize = dimensionResource(
+                        R.dimen.button_text_size
+                    ).value.sp
+                )
             }
-        
+        }
     }
 }
