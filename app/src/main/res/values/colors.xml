@@ -9,4 +9,8 @@
     <color name="background_white">#FFFFFF</color>
     <color name="background_screen">#F7F5FA</color>
 
+    <!-- Warna teks -->
+    <color name="text_primary">#25212B</color>
+    <color name="text_secondary">#77717F</color>
+
 </resources>
