@@ -15,4 +15,13 @@
     <string name="date_format_hint">DD/MM/YYYY</string>
     <string name="date_not_selected">Pilih tanggal lahir</string>
 
+    <!-- Pengalaman -->
+    <string name="experience_label">Experience</string>
+    <string name="experience_beginner">Beginner</string>
+    <string name="experience_intermediate">Intermediate</string>
+    <string name="experience_advanced">Advanced</string>
+    <string name="experience_not_selected">Pilih pengalaman</string>
+    <string name="icon_calendar">▦</string>
+    <string name="icon_dropdown">▾</string>
+
 </resources>
