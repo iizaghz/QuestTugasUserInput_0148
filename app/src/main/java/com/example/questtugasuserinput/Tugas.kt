@@ -476,3 +476,24 @@ private fun FormInputField(
         isError = isError
     )
 }
+
+@Composable
+private fun ExperienceOption(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        RadioButton(
+            selected = selected,
+            onClick = onClick
+        )
+
+        Text(
+            text = label,
+            modifier = Modifier.clickable(onClick = onClick)
+        )
+    }
+}
