@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">QuestTugasUserInput</string>
+
+    <!-- Judul form -->
+    <string name="form_title">Form Biodata</string>
+    <string name="form_subtitle">Silakan isi biodata Anda</string>
+
 </resources>
